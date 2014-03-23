@@ -1,135 +1,32 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html>
     <head>
-        <meta charset="utf-8" />
-        <title></title>
-        <style>
-            body {
-                width: 600px;
-                margin: auto;
-            }
-            
-            #contact {
-                background: #e3e3e3;
-                padding: 1em 2em;
-                position: relative;
-            }
-            
-            .js #contact {
-                position: absolute;
-                top: 0;
-                width: inherit; /* inherits width of it's container */
-                display: none;
-            }
-            
-            .close {
-                position: absolute;
-                right: 10px;
-                top: 10px;
-                font-weight: bold;
-                font-family: sans-serif;
-                cursor: pointer;
-            }
-            
-            form ul, ol {
-                list-style: none;
-                padding: 0;
-            }
-            
-            input, textarea {
-                width: 100%;
-                line-height: 2em;
-            }
-            
-            input[type=submit] {
-                width: auto;
-            }
-            
-            label {
-                display: block;
-                text-align: left;
-            }
-        </style>
+        <meta charset="utf-8">
+        <title>The this Keyword</title>
     </head>
     <body>
-        <article>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-        </article>
-        <div id="contact">
-            <h2>Contact Me</h2>
-            <form action="#">
-                <ul>
-                    <li>
-                        <label for="name">Name</label>
-                        <input id="name" name="name" />
-                    </li>
-                    <li>
-                        <label for="email">Email Address</label>
-                        <input id="email" name="email" />
-                    </li>
-                    <li>
-                        <label for="comment">Comment</label>
-                        <textarea id="comment" name="comment" cols="30" rows="10"></textarea>
-                    </li>
-                    <li>
-                        <input type="submit" value="Submit" />
-                    </li>
-                </ul>
-            </form>
-        </div>
+        <a href="http://tutsplus.com">Click Me</a>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script>
-            //-- self invoking function
-            (function () {
-                $('html').addClass('js');
-
-                var contactForm = {
-                    container: $('#contact'),
-                    config: {
-                        effect: 'slideToggle',
-                        speed: 500
-                    },
-                    init: function (config) {
-                        $.extend(this.config, config);
-                        $('<button></button>', {
-                            text: 'Contact Me'
-                        })
-                        .insertAfter('article')
-                        .on('click', this.show);
-                    },
-                    show: function () {
-                        var cf = contactForm,
-                            container = cf.container,
-                            config = cf.config;
-
-                        if (container.is(':hidden')) {
-                            cf.close.call(container); // ensure $(this) is #contact
-                            container[config.effect](config.speed);
-                        }
-                    },
-                    close: function () {
-                        var $this = $(this); // #contact
-                        
-                        if($this.find('span.close').length) return
-
-                        $('<span class="close">X</span>')
-                        .prependTo(this)
-                        .on('click', function () {
-                            // this = span
-                            $this[contactForm.config.effect](contactForm.config.speed);
-                        })
-                    }
-                };
-
-                contactForm.init({
-                    effect: 'fadeToggle',
-                    speed: 2000
-                });
-
-            })();
+            var obj = {
+                doIt: function(e) {
+                    console.log(this);
+                    e.preventDefault();
+                }
+            }
+            $('a').on( 'click', $.proxy(obj.doIt, obj) )
+            
+            // $('a').on('click', function(e) {
+            // 	// this = anchor that was clicked
+            // 	obj.doIt.call(this);
+            // 	e.preventDefault();
+            // });
         </script>
     </body>
 </html>
+
+
+
+
+
