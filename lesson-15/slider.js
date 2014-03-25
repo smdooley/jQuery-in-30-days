@@ -18,6 +18,7 @@ Slider.prototype.transition = function (coords) {
 Slider.prototype.setCurrent = function (dir) {
     var pos = this.current;
 
+    //-- ~~ converts boolean to number
     pos += (~~(dir === 'next') || -1);
     this.current = (pos < 0) ? this.imgsLen - 1 : pos % this.imgsLen;
 
