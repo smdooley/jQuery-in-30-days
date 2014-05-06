@@ -1,4 +1,5 @@
-// Utility
+//-- Utility
+//-- Created custom Object.create as doesn't work in all browsers
 if ( typeof Object.create !== 'function' ) {
 	Object.create = function( obj ) {
 		function F() {};
@@ -13,7 +14,7 @@ if ( typeof Object.create !== 'function' ) {
 			var self = this;
 
 			self.elem = elem;
-			self.$elem = $( elem );
+			self.$elem = $( elem ); //-- jQuery reference to element
 
 			self.url = 'http://search.twitter.com/search.json';
 
