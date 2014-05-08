@@ -51,20 +51,26 @@ Today, we'll focus less on jQuery, and more on a third-party templating solution
 When it comes to templating, Handlebars is easily one of the most popular options. I'll show you how to use it in your projects.  
 
 Day 21: The Twitter API  
-In today's lesson, we'll review a handful of fun techniques, as we pull in tweets from the Twitter API. These techniques include templating, jQuery.map, AJAX, and code organization.  
+In today's lesson, we'll review a handful of fun techniques, as we pull in tweets from the Twitter API. These techniques include templating, jQuery.map, AJAX, and code organization.
+
 It's vital that you understand the concepts in this lesson, so, if necessary, watch it twice for good measure!  
 
 Day 22: Filtering with jQuery.grep  
-I get it; some of these utility methods aren't nearly as exciting as working with AJAX and effects, but, nonetheless, if you learn them, you'll drastically improve the quality (and length) of your code.  
-Today, we'll review the helpful $.grep method, which can be used to filter an array, based upon the results of a particular test.  
+I get it; some of these utility methods aren't nearly as exciting as working with AJAX and effects, but, nonetheless, if you learn them, you'll drastically improve the quality (and length) of your code.
+
+
+Today, we'll review the helpful $.grep method, which can be used to filter an array, based upon the results of a particular test.
+
 
 Day 23: Custom Events and the Observer Pattern  
-We're not limited to jQuery's built-in events; we can create our own with ease! Additionally, we'll review the popular Observer Pattern (PubSub), and how it can provide increased flexibility for your projects.  
+We're not limited to jQuery's built-in events; we can create our own with ease! Additionally, we'll review the popular Observer Pattern (PubSub), and how it can provide increased flexibility for your projects.
+
 
 Day 24: Loading Pages Asynchronously  
-We've put it off long enough; it's time to dig into jQuery's various AJAX helper methods. You're in luck, because this is an area where jQuery truly shines. It manages to wrangle all of those nasty browser inconsistencies into place, while providing us with a laughably easy-to-use API.  
-  
-Today, we start with the simplest of all the AJAX helper methods: load().  
+We've put it off long enough; it's time to dig into jQuery's various AJAX helper methods. You're in luck, because this is an area where jQuery truly shines. It manages to wrangle all of those nasty browser inconsistencies into place, while providing us with a laughably easy-to-use API.
+
+
+Today, we start with the simplest of all the AJAX helper methods: load().
 
 Day 25: Interacting with the Server-Side  
 The load() method is certainly helpful, but what if we need slightly more control? In this lesson, we'll take a step up, and review two more AJAX helper methods: $.get and $.post. These methods allow us to communicate with the server-side.  
